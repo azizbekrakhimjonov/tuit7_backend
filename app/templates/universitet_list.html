@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Universitetlar Ro'yxati</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nomi</th>
+      <th>Manzil</th>
+      <th>Asos Sani</th>
+      <th>Rektor</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for universitet in universitetlar %}
+    <tr>
+      <td>{{ universitet.nomi }}</td>
+      <td>{{ universitet.manzil }}</td>
+      <td>{{ universitet.asos_sanasi }}</td>
+      <td>{{ universitet.rektor }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -27,16 +27,21 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+JAZZMIN_UI_TWEAKS = {
+    "theme": "pulse",
+    "dark_mode_theme": "solar",
+}
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
 ]
 
 MIDDLEWARE = [

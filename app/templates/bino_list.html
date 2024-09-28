@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Binolar Ro'yxati</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nomi</th>
+      <th>Manzil</th>
+      <th>Qavat soni</th>
+      <th>Sig'imi</th>
+      <th>Qurilish yili</th>
+      <th>Universitet</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for bino in binolar %}
+    <tr>
+      <td>{{ bino.nomi }}</td>
+      <td>{{ bino.manzil }}</td>
+      <td>{{ bino.qavat_soni }}</td>
+      <td>{{ bino.sigimi }}</td>
+      <td>{{ bino.qurilish_yili }}</td>
+      <td>{{ bino.universitet.nomi }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

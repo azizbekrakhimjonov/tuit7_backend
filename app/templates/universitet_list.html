@@ -9,15 +9,37 @@
       <th>Manzil</th>
       <th>Asos Sani</th>
       <th>Rektor</th>
+      <th>Contaxt</th>
+      <th>Xorijiy Hamkorlik</th>
+      <th>Status</th> <!-- Yangi ustun: Davlat/Nodavlat -->
     </tr>
   </thead>
   <tbody>
     {% for universitet in universitetlar %}
     <tr>
       <td>{{ universitet.nomi }}</td>
-      <td>{{ universitet.manzil }}</td>
+      <td>
+        <a href="https://www.google.com/maps/search/?api=1&query={{ universitet.manzil }}" target="_blank">
+          Ko'rish
+        </a>
+      </td>
       <td>{{ universitet.asos_sanasi }}</td>
       <td>{{ universitet.rektor }}</td>
+      <td>{{ universitet.contact }}</td>
+      <td>
+        {% if universitet.xorij_hamkorlik %}
+          Ha
+        {% else %}
+          Yo'q
+        {% endif %}
+      </td>
+      <td>
+        {% if universitet.davlat %}  <!-- Boolean holati uchun -->
+          Davlat
+        {% else %}
+          Nodavlat
+        {% endif %}
+      </td>
     </tr>
     {% endfor %}
   </tbody>

@@ -4,13 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universitet Ma'lumotlari</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: linear-gradient(90deg, rgba(30,64,175,1) 0%, rgba(34,193,195,1) 100%);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f8f9fa;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Table Styling */
+        table {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #1e40af;
+            color: grey;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        td {
+            padding: 12px;
+            font-size: 1rem;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Fade-in Animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInAnimation ease 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Univer Info</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,9 +87,6 @@
           <a class="nav-link active" href="{% url 'universitet_list' %}">Universitetlar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'talaba_list' %}">Talabalar</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="{% url 'bino_list' %}">Bino</a>
         </li>
       </ul>
@@ -32,7 +94,8 @@
   </div>
 </nav>
 
-<div class="container mt-4">
+<!-- Content -->
+<div class="container mt-4 fade-in">
     {% block content %}
     {% endblock %}
 </div>

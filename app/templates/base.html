@@ -17,6 +17,7 @@
         /* Navbar Styling */
         .navbar {
             background: linear-gradient(90deg, rgba(30,64,175,1) 0%, rgba(34,193,195,1) 100%);
+            animation: slideDown 1s ease;
         }
 
         .navbar-brand {
@@ -33,6 +34,7 @@
         .navbar-nav .nav-link:hover {
             color: #f8f9fa;
             background-color: rgba(255, 255, 255, 0.2);
+            animation: hoverEffect 0.5s ease-in-out;
         }
 
         /* Table Styling */
@@ -41,6 +43,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             overflow: hidden;
+            animation: fadeInTable 2s ease;
         }
 
         th {
@@ -57,6 +60,7 @@
 
         tr:hover {
             background-color: #f1f1f1;
+            transition: background-color 0.3s ease-in-out;
         }
 
         /* Fade-in Animation */
@@ -66,9 +70,33 @@
             animation-fill-mode: forwards;
         }
 
+        /* Input focus effect */
+        input:focus {
+            border-color: #1e40af;
+            box-shadow: 0 0 10px rgba(30, 64, 175, 0.5);
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Animations */
         @keyframes fadeInAnimation {
             0% { opacity: 0; }
             100% { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes hoverEffect {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeInTable {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -87,7 +115,7 @@
           <a class="nav-link active" href="{% url 'universitet_list' %}">Universitetlar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'bino_list' %}">Bino</a>
+          <a class="nav-link" href="{% url 'malumot_list' %}">Malumot</a>
         </li>
       </ul>
     </div>
